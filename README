@@ -1,0 +1,21 @@
+(C) 2017 XuRi<xuripsw@allwinnertech.com>
+This code is licensed under the GPL.
+
+使用方法：
+
+1>确认read、user.sh、read.sh有可执行权限
+2>修改read.sh中的filename为被测试文件路径，以后可以直接执行"<脚本路径>user.sh <测试次数>"，无需输入文件路径
+3>执行
+  
+    <脚本路径>user.sh <测试次数> [文件路径]
+    eg:
+        ./user.sh 10 ./Git.md
+  
+  即可
+——————————————————————————————————————————————————————————————————————————————————————
+原理概述：
+
+通过/dev/urandom产生随机数X，利用read()函数读取被测试文件X个字节。
+读文件次数不超过２０次，且读到的数据总数不超过文件大小。
+可指定进行测试次数（不限）。
+成功则打印出"Read Success."，失败打印出"Read ERROR!!!"。
