@@ -1,6 +1,10 @@
 (C) 2017 XuRi<xuripsw@allwinnertech.com>
-This code is licensed under the GPL.
+This code is licensed under the GPL2.
 
+功能：
+
+通过read()函数进行读文件测试
+——————————————————————————————————————————————————————————————————————————————————————
 使用方法：
 
 1>确认read、user.sh、read.sh有可执行权限
