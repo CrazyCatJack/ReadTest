@@ -4,7 +4,7 @@
 # Function: Create random number and call read exec.
 
 # (C) 2017 XuRi
-# This code is under the GPL license.
+# This code is licensed under the GPL2.
 
 psd=$(cd `dirname $0`;pwd)
 if [ -z $1 ]

@@ -5,7 +5,7 @@
     > Function: Read a file many times.
 
       (C) 2017 XuRi
-      This code is licensed under the GPL.
+      This code is licensed under the GPL2.
  ************************************************************************/
 
 #include <sys/types.h>

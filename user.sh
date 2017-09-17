@@ -5,7 +5,7 @@
 # Manual: ./test.sh <test times> [file-directory]
 
 # (C) 2017 XuRi 
-# This code is licensed under the GPL.
+# This code is licensed under the GPL2.
 rsd=$(cd `dirname $0`;pwd)
 var=0
 if [ -z $2  ]
