@@ -10,7 +10,7 @@ psd=$(cd `dirname $0`;pwd)
 if [ -z $1 ]
 then
 # default file directory:
-    filename="Write your filedirectory here"
+    filename="/home/xuri/learnsomething/learnbash/Git.md"
 else
     filename=$1
 fi
@@ -31,26 +31,31 @@ do
     readsize=$(rand 0 $filesize)
     if [ $count -lt 5  ]
     then
-        smallreadsize=`expr $readsize / 10`
+        smallreadsize=`expr $readsize / 15`
         my_array[$count]=$smallreadsize
         sum=`expr $sum + $smallreadsize`
     elif [ $count -lt 10  ]
     then
-        middlereadsize=`expr $readsize / 7`
+        middlereadsize=`expr $readsize / 10`
         sum=`expr $sum + $middlereadsize`
         my_array[$count]=$middlereadsize
-    else
-        
-        largereadsize=`expr $readsize / 4`
+    elif [ $count -lt 15  ]
+    then
+        largereadsize=`expr $readsize / 8`
         sum=`expr $sum + $largereadsize`
         my_array[$count]=$largereadsize
+    else
+        bigreadsize=`expr $readsize / 7`
+        sum=`expr $sum + $bigreadsize`
+        my_array[$count]=$bigreadsize
     fi
     count=`expr $count + 1`
 done
-if [ $sum -gt $filesize  ]
+if [ $sum -gt $filesize ]
 then
     count=`expr $count - 1`
-    my_array[$count]=0
+    before=`expr $sum - ${my_array[$count]}`
+    my_array[$count]=`expr $filesize - $before`
 fi
 
 $psd/read $filename $filesize ${#my_array[*]} ${my_array[*]}
